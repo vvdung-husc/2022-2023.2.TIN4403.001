@@ -1,0 +1,4 @@
+1. ANDROID STUDIO	- https://developer.android.com/studio
+2. MEAN Stack 		- https://mean.io
+ - MongoDB 				- https://nodejs.org/en/download/
+ - NodeJS  				- https://www.mongodb.com/try/download/community
