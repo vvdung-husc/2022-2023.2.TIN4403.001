@@ -15,8 +15,9 @@
         android:inputType="textPersonName"
         android:rotationX="2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="136dp"
+        tools:layout_editor_absoluteY="167dp"
         tools:text="tendangnhap" />
 
     <EditText
@@ -27,22 +28,23 @@
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="221dp"
+        tools:layout_editor_absoluteY="299dp"
         tools:text="123456" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="408dp"/>
+        tools:layout_editor_absoluteY="98dp" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="login"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="352dp" />
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="469dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
