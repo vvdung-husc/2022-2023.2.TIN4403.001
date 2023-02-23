@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edttentaikhoan"
+        android:layout_width="269dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:hint="Tên tài khoản"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtmatkhau"
+        android:layout_width="269dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edttentaikhoan" />
+
+    <TextView
+        android:id="@+id/tvquenmatkhau"
+        android:layout_width="100dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
+        android:text="Quên mật khẩu"
+        android:textColor="#03A9F4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtmatkhau" />
+
+    <Button
+        android:id="@+id/btdangnhap"
+        android:layout_width="136dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:text="Đăng nhập"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvquenmatkhau" />
+
+    <TextView
+        android:id="@+id/tvdangky"
+        android:layout_width="50dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="Đăng ký"
+        android:textColor="#03A9F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtmatkhau" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
