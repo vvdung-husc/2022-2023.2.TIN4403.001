@@ -6,3 +6,8 @@
 
 VSCode - Settings.json
 "http.proxy": "http://vvdung:1a2B3C4d@103.154.100.88:7001",
+
+MONGODB - COMMAND
+db.getCollection("users").insertMany({}); them nhieu documents
+db.getCollection("users").insert({}); them 1 document
+db.getCollection("users").find({});
