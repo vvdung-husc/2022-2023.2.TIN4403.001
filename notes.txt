@@ -3,3 +3,6 @@
 2. MEAN Stack 		- https://mean.io
  - MongoDB 				- https://nodejs.org/en/download/
  - NodeJS  				- https://www.mongodb.com/try/download/community
+
+VSCode - Settings.json
+"http.proxy": "http://vvdung:1a2B3C4d@103.154.100.88:7001",
