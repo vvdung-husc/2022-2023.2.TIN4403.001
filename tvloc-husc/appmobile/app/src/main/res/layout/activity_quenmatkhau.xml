@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".quenmatkhauActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
@@ -62,10 +62,10 @@
         />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginbtn"
+        android:id="@+id/forgotbtn"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/phone"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"

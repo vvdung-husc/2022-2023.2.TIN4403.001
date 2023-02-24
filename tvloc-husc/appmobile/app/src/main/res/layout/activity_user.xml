@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".userActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/user"
+        android:text="Chào người dùng ..."
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:layout_margin="50dp"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/avatar"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="65dp"
+        android:src="@drawable/user" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:id="@+id/logoutbtn"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:text="Đăng xuất"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/avatar"
+        android:layout_centerInParent="true"
+        android:drawableRight="@drawable/baseline_logout_24"
+        />
+</RelativeLayout>

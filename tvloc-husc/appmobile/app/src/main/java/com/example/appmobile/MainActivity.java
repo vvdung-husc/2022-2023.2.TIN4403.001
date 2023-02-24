@@ -5,24 +5,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
-
+    private  EditText username,password;
+    private MaterialButton loginbtn,signupbtn;
+    public static final String US = "US";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView username =(TextView) findViewById(R.id.username);
-        TextView password =(TextView) findViewById(R.id.password);
+        username =(EditText) findViewById(R.id.username);
+        password =(EditText) findViewById(R.id.password);
 
-        MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
-        MaterialButton signupbtn = (MaterialButton) findViewById(R.id.signupbtn);
+        loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
+        signupbtn = (MaterialButton) findViewById(R.id.signupbtn);
         TextView quenmatkhau = (TextView) findViewById(R.id.quenmatkhau);
+
+        String us = username.getText().toString();
 
         quenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(username.getText().toString().equals("admin") && password.getText().toString().equals("123")){
                     Toast.makeText(MainActivity.this,"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                    String us = username.getText().toString();
+                    byExtras(us);
+
                 }else if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Vui lòng không để trống tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                 }else{
@@ -55,4 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void byExtras(String us){
+        Intent intent = new Intent(MainActivity.this, userActivity.class);
+        intent.putExtra(US,us);
+        startActivity(intent);
+    }
+
+
 }
