@@ -14,7 +14,7 @@ import com.google.android.material.button.MaterialButton;
 public class MainActivity extends AppCompatActivity {
     private  EditText username,password;
     private MaterialButton loginbtn,signupbtn;
-    public static final String US = "US";
+    static String US;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
         quenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, quenmatkhauActivity.class);
+                Intent intent = new Intent(getApplicationContext(), quenmatkhauActivity.class);
                 startActivity(intent);
             }
         });
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, dangkyActivity.class);
+                Intent intent = new Intent(getApplicationContext(), dangkyActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,15 +47,19 @@ public class MainActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("123")){
-                    Toast.makeText(MainActivity.this,"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
-                    String us = username.getText().toString();
-                    byExtras(us);
+                if(username.getText().toString().equals("loctv_k43") && password.getText().toString().equals("021119")){
+                    Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"{\"username\":\"" + username.getText().toString() + "\",\"password\":\"" + password.getText().toString() +"\"}",Toast.LENGTH_SHORT).show();
+                    US = username.getText().toString();
+                    Intent intent = new Intent(getApplicationContext(),userActivity.class);
+                    startActivity(intent);
 
                 }else if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Vui lòng không để trống tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Vui lòng không để trống tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+                }else if (username.getText().toString().length() <=3 || password.getText().toString().length() < 6){
+                    Toast.makeText(getApplicationContext(), "Tài khoản hoặc mật khẩu không hợp lệ", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(MainActivity.this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -64,11 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void byExtras(String us){
-        Intent intent = new Intent(MainActivity.this, userActivity.class);
-        intent.putExtra(US,us);
-        startActivity(intent);
-    }
+
 
 
 }

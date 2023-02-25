@@ -30,16 +30,16 @@ public class dangkyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(username.getText().toString().isEmpty() || password.getText().toString().isEmpty() || password2.getText().toString().isEmpty()){
-                    Toast.makeText(dangkyActivity.this,"Vui lòng điền đầy đủ thông tin",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Vui lòng điền đầy đủ thông tin",Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(dangkyActivity.this,"Đăng ký thành công",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Đăng ký thành công",Toast.LENGTH_SHORT).show();
                 }
             }
         });
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangkyActivity.this, MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +47,7 @@ public class dangkyActivity extends AppCompatActivity {
         quenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangkyActivity.this, quenmatkhauActivity.class);
+                Intent intent = new Intent(getApplicationContext(), quenmatkhauActivity.class);
                 startActivity(intent);
             }
         });

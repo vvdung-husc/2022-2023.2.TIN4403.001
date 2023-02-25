@@ -21,21 +21,17 @@ public class userActivity extends AppCompatActivity {
         MaterialButton logoutbtn = (MaterialButton) findViewById(R.id.logoutbtn);
         user = (TextView) findViewById(R.id.user);
 
-        setDataByExtras();
+        String us = "Chào mừng người dùng: " + MainActivity.US;
+        user.setText(us);
 
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(userActivity.this, MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    public void setDataByExtras(){
-        Intent intent = getIntent();
-        String us = intent.getStringExtra(MainActivity.US);
 
-        user.setText("Chào mừng người dùng: "+ us);
-    }
 }

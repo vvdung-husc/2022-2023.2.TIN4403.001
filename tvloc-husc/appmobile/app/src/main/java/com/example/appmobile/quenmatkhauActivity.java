@@ -25,7 +25,7 @@ public class quenmatkhauActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(quenmatkhauActivity.this, MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,9 +34,9 @@ public class quenmatkhauActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(username.getText().toString().isEmpty() || phone.getText().toString().isEmpty()) {
-                    Toast.makeText(quenmatkhauActivity.this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(quenmatkhauActivity.this, "Chuyển hướng sang trang nhập mẫ OTP", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Chuyển hướng sang trang nhập mẫ OTP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
