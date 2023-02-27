@@ -20,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".dangkyActivity"/>
+        <activity android:name=".quenmatkhauActivity"/>
+        <activity android:name=".userActivity"/>
     </application>
 
 </manifest>
