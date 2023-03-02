@@ -138,18 +138,21 @@ public class MainActivity extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("K43","onFailure");
+                String errStr = "Tài khoản hoặc mật khẩu không chính xác.\n" + e.getMessage();
+                Log.d("K43","onFailure\n" + errStr);
+                Toast.makeText(getApplicationContext(),errStr,Toast.LENGTH_SHORT).show();
                 call.cancel();
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.d("K43",response.body().string());
+                String errStr = "Tài khoản hoặc mật khẩu không chính xác.\n" + response.body().string();
+                Log.d("K43",errStr);
                 if (!response.isSuccessful()){
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getApplicationContext(),"Tài khoản hoặc mật khẩu không chính xác.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),errStr,Toast.LENGTH_SHORT).show();
                         }
                     });
                     return;

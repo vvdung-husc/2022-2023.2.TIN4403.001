@@ -17,3 +17,16 @@ db.getCollection("users").find({});
 -  app/build.gradle (Module::app)
 implementation 'com.squareup.okhttp3:okhttp:3.12.0'
 - Sync Now
+
+
+-AndroidManifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ...>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        ...
+        android:usesCleartextTraffic="true"
+        ...>
+        ...
+    </application>
+</manifest>
