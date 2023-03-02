@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
     //Hàm dịch vụ Login
     void apiLogin(String user, String pass) throws IOException {
-        boolean bOk = (user.equals("vvdung") && pass.equals("123456"));
+        boolean bOk = (user.equals("ldnghuy") && pass.equals("123456"));
         String json = "{\"username\":\"" + user + "\",\"password\":\"" + pass +"\"}" + bOk;
         Toast.makeText(getApplicationContext(),json,Toast.LENGTH_SHORT).show();
         Log.d("K43",json);
 
         if (bOk){
-            _userNameLogined = "Võ Việt Dũng";
+            _userNameLogined = "Lê Đình Ngọc Huy";
             Intent intent = new Intent(getApplicationContext(),UserActivity.class);
             startActivity(intent);
         }
