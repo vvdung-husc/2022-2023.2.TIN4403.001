@@ -1,4 +1,4 @@
-package com.example.testing;
+package com.example.myapplaptrinhdidong1;
 
 import org.junit.Test;
 

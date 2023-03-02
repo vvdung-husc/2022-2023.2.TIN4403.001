@@ -5,7 +5,7 @@
  - NodeJS  				- https://www.mongodb.com/try/download/community
 
 VSCode - Settings.json
-"http.proxy": "http://vvdung:1a2B3C4d@103.154.100.88:7001",
+"http.proxy": "http://vvdung:1a2B3C4d1a2B3C4d@@103.154.100.88:7001",
 
 npm config set proxy http://vvdung:1a2B3C4d@103.154.100.88:7001
 
@@ -13,3 +13,20 @@ MONGODB - COMMAND
 db.getCollection("users").insertMany({}); them nhieu documents
 db.getCollection("users").insert({}); them 1 document
 db.getCollection("users").find({});
+
+-  app/build.gradle (Module::app)
+implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+- Sync Now
+
+
+-AndroidManifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ...>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        ...
+        android:usesCleartextTraffic="true"
+        ...>
+        ...
+    </application>
+</manifest>

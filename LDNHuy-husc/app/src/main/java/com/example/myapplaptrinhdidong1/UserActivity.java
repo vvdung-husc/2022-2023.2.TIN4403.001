@@ -1,4 +1,4 @@
-package com.tink43.hello_husc;
+package com.example.myapplaptrinhdidong1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class  UserActivity extends AppCompatActivity {
-    TextView m_txtWelcome;
-    Button m_btnLogout;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        TextView m_txtWelcome;
+        Button m_btnLogout;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
@@ -23,14 +23,14 @@ public class  UserActivity extends AppCompatActivity {
         String s = "Chào mừng tài khoản : " + MainActivity._userNameLogined;
         m_txtWelcome.setText(s);
         m_btnLogout.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                // Finish the registration screen and return to the Login activity
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+@Override
+public void onClick(View v) {
+        // Finish the registration screen and return to the Login activity
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+        finish();
+        }
         });
 
-    }
-}
+        }
+        }
