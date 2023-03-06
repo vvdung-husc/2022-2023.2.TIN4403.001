@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             String user = m_edtUser.getText().toString();
             String pass = m_edtPass.getText().toString();
             Log.d("K43","CLICK BUTTON LOGIN ACCOUNT " + user + "/" + pass);
-            if (user.length() <= 3 || pass.length() < 6){
+            if (user.length() < 3 || pass.length() < 6){
                 Toast.makeText(getApplicationContext(),"Tài khoản hoặc mật khẩu không hợp lệ!",Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -63,11 +63,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d("K43",json);
 
         if (bOk){
+            Log.d("K43","TRUE OK");
             _userNameLogined = "chào lụa ";
             Intent intent = new Intent(getApplicationContext(),UserActivity.class);
             startActivity(intent);
         }
         else{
+            Log.d("K43","FALSE OK");
             MainActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
