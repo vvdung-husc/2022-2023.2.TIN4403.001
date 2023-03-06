@@ -31,7 +31,17 @@ app.post("/login", function (req, res) {
 
 //hàm đăng ký tài khoản
 app.post("/register", function (req, res) {
-  res.status(200).send("API REGISTER - POST");
+  var user = req.body.username;
+  var pass = req.body.password;	
+  var name = req.body.fullname;
+  var oUser = {
+    username: user,
+    password: pass,
+    fullname: name
+  }
+  console.log("ACCOUNT:",user, "/",pass );
+  register(oUser,res);
+  //res.status(200).send("API REGISTER - POST");
 });
 
 //hàm nhận thông tin tài khoản sau khi đã đăng nhập thành công
@@ -80,4 +90,25 @@ function login(user,pass,res){
       return res.status(200).json(oResult);
     }
   });   
+}
+
+function register(oUser,res){
+  async.waterfall([
+    function (next) {
+      USER.registerUser(oUser,next);
+    }
+  ],function (err, result) {
+    if (err) {
+      var oResult = {};
+      oResult.r = -1;
+      oResult.m = result;
+      return res.status(302).json(oResult);      
+    }
+    else {
+      var oResult = {};
+      oResult.r = 0;
+      oResult.m = "Tạo tài khoản thành công!";
+      return res.status(200).json(oResult);
+    }
+  });  
 }
