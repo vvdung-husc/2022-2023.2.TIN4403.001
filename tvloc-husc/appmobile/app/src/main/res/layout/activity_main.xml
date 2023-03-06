@@ -94,53 +94,53 @@
         android:textColor="@color/black"/>
 
 
-    <TextView
-        android:id="@+id/quenmatkhau"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signupbtn"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="Quên mật khẩu?"
-        android:textColor="@color/white"
-        android:textSize="15dp" />
+<!--    <TextView-->
+<!--        android:id="@+id/quenmatkhau"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/signupbtn"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Quên mật khẩu?"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="15dp" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/other"
-        android:text="Đăng nhập bằng ứng dụng dưới đây"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/icon"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/other"-->
+<!--        android:text="Đăng nhập bằng ứng dụng dưới đây"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_above="@+id/icon"-->
+<!--        />-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:id="@+id/icon">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:gravity="center"-->
+<!--        android:id="@+id/icon">-->
 
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/google"/>
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/facebook"/>
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/twitter"/>
+<!--        <ImageView-->
+<!--            android:layout_width="45dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:src="@drawable/google"/>-->
+<!--        <ImageView-->
+<!--            android:layout_width="45dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:src="@drawable/facebook"/>-->
+<!--        <ImageView-->
+<!--            android:layout_width="45dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:src="@drawable/twitter"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 </RelativeLayout>
