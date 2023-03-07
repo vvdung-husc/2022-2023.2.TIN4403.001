@@ -142,8 +142,8 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call call, IOException e) {
                 String errStr = "Tài khoản hoặc mật khẩu không chính xác.\n" + e.getMessage();
                 Log.d("K43","onFailure\n" + errStr);
-                Toast.makeText(getApplicationContext(),errStr,Toast.LENGTH_SHORT).show();
-                call.cancel();
+//                Toast.makeText(getApplicationContext(),errStr,Toast.LENGTH_SHORT).show();
+//                call.cancel();
             }
 
             @Override

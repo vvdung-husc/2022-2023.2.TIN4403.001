@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Appmobile"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -21,7 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".dangkyActivity"/>
-<!--        <activity android:name=".quenmatkhauActivity"/>-->
         <activity android:name=".userActivity"/>
     </application>
 
