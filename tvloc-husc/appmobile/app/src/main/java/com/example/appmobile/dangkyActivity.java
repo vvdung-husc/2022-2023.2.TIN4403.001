@@ -19,20 +19,23 @@ public class dangkyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dangky);
 
         TextView username =(TextView) findViewById(R.id.username);
+        TextView name =(TextView) findViewById(R.id.name);
         TextView password =(TextView) findViewById(R.id.password);
         TextView password2 =(TextView) findViewById(R.id.password2);
 
         MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
         MaterialButton signupbtn = (MaterialButton) findViewById(R.id.signupbtn);
-//        TextView quenmatkhau = (TextView) findViewById(R.id.quenmatkhau);
+
 
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().isEmpty() || password.getText().toString().isEmpty() || password2.getText().toString().isEmpty()){
+                if(username.getText().toString().isEmpty() || name.getText().toString().isEmpty() || password.getText().toString().isEmpty() || password2.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(),"Vui lòng điền đầy đủ thông tin",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(),"Đăng ký thành công",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), userActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -44,12 +47,6 @@ public class dangkyActivity extends AppCompatActivity {
             }
         });
 
-//        quenmatkhau.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), quenmatkhauActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
     }
 }
