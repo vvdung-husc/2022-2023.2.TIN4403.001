@@ -25,17 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
         loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
         signupbtn = (MaterialButton) findViewById(R.id.signupbtn);
-//        TextView quenmatkhau = (TextView) findViewById(R.id.quenmatkhau);
+
 
         String us = username.getText().toString();
 
-//        quenmatkhau.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), quenmatkhauActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
