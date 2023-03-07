@@ -24,7 +24,7 @@ public class dangkyActivity extends AppCompatActivity {
 
         MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
         MaterialButton signupbtn = (MaterialButton) findViewById(R.id.signupbtn);
-        TextView quenmatkhau = (TextView) findViewById(R.id.quenmatkhau);
+//        TextView quenmatkhau = (TextView) findViewById(R.id.quenmatkhau);
 
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +44,12 @@ public class dangkyActivity extends AppCompatActivity {
             }
         });
 
-        quenmatkhau.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), quenmatkhauActivity.class);
-                startActivity(intent);
-            }
-        });
+//        quenmatkhau.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), quenmatkhauActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

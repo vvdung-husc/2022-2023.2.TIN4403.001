@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".dangkyActivity"/>
-        <activity android:name=".quenmatkhauActivity"/>
+<!--        <activity android:name=".quenmatkhauActivity"/>-->
         <activity android:name=".userActivity"/>
     </application>
 
