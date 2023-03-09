@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (bOk){
             Log.d("K43","TRUE OK");
-            _userNameLogined = "chào lụa ";
+            _userNameLogined = " Lụa Hà ";
             Intent intent = new Intent(getApplicationContext(),UserActivity.class);
             startActivity(intent);
         }
