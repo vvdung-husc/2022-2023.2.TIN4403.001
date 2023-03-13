@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //Hàm dịch vụ Login
     void apiLogin(String user, String pass) throws IOException {
-        //boolean bOk = (user.equals("vvdung") && pass.equals("123456"));
+        //boolean bOk = (user.equals("nvchinh") && pass.equals("123456"));
         String json = "{\"username\":\"" + user + "\",\"password\":\"" + pass +"\"}";
         Toast.makeText(getApplicationContext(),json,Toast.LENGTH_SHORT).show();
         Log.d("K43",json);
