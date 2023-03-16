@@ -1,4 +1,4 @@
-package com.tink43.hello_husc;
+package com.example.test1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
