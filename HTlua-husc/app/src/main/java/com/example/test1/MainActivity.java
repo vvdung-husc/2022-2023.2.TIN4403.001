@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (bOk){
             Log.d("K43","TRUE OK");
-            _userNameLogined = "chào lụa ";
+            _userNameLogined = " Lụa Hà ";
             Intent intent = new Intent(getApplicationContext(),UserActivity.class);
             startActivity(intent);
         }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {//Hàm sử lý sự kiện click button register
-            //Toast.makeText(getApplicationContext(),"CButtonRegister::onClick...",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"CButtonRegister::onClick...",Toast.LENGTH_SHORT).show();
             Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(i);
         }
