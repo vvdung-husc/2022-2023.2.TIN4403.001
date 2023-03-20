@@ -1,6 +1,4 @@
-package com.example.testlogin;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.tink43.my_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.test2.R;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class  UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
     TextView m_txtWelcome;
     Button m_btnLogout;
     @Override
@@ -22,7 +20,7 @@ public class  UserActivity extends AppCompatActivity {
         m_txtWelcome = (TextView)findViewById(R.id.txtWelcome);
         m_btnLogout = (Button) findViewById(R.id.btnLogout);
 
-        String s = "Chào mừng bạn đến với tài khoản: " + MainActivity._userNameLogined;
+        String s = "Chào mừng tài khoản : " + MainActivity._userNameLogined;
         m_txtWelcome.setText(s);
         m_btnLogout.setOnClickListener(new View.OnClickListener(){
             @Override

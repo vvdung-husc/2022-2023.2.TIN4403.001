@@ -1,4 +1,4 @@
-package com.example.testlogin;
+package com.example.test1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.example.test2.R;
 
 public class  UserActivity extends AppCompatActivity {
     TextView m_txtWelcome;
@@ -22,7 +20,7 @@ public class  UserActivity extends AppCompatActivity {
         m_txtWelcome = (TextView)findViewById(R.id.txtWelcome);
         m_btnLogout = (Button) findViewById(R.id.btnLogout);
 
-        String s = "Chào mừng bạn đến với tài khoản: " + MainActivity._userNameLogined;
+        String s = "CHÀO MỪNG BẠN ĐẾN VỚI NGUỒN TÀI NGUYÊN CÓ 1 KHÔNG 2:" + MainActivity._userNameLogined;
         m_txtWelcome.setText(s);
         m_btnLogout.setOnClickListener(new View.OnClickListener(){
             @Override
