@@ -20,7 +20,7 @@ public class  UserActivity extends AppCompatActivity {
         m_txtWelcome = (TextView)findViewById(R.id.txtWelcome);
         m_btnLogout = (Button) findViewById(R.id.btnLogout);
 
-        String s = "CHÀO MỪNG BẠN ĐẾN VỚI BÌNH NGUYÊN VÔ TẬN VS TÀI KHOẢNG :" + MainActivity._userNameLogined;
+        String s = "CHÀO MỪNG BẠN ĐẾN VỚI ỨNG DỤNG HAY HOA NHẤT :" + MainActivity._userNameLogined;
         m_txtWelcome.setText(s);
         m_btnLogout.setOnClickListener(new View.OnClickListener(){
             @Override
