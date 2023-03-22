@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.androidh.MainActivity;
-
 public class  UserActivity extends AppCompatActivity {
     TextView m_txtWelcome;
     Button m_btnLogout;
