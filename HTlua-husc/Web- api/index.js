@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
     if (user == "vvdung" && pass == "13572468" )
       res.status(200).send("API LOGIN - THANH CONG");
     else
-      res.status(503).send("API LOGIN - LOI TAI KHOAN");
+     res.status(503).send("API LOGIN - LOI TAI KHOAN");
   });
   
   //hàm đăng ký tài khoản
