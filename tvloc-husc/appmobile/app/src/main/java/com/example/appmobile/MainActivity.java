@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(JSON,json);
         Request request = new Request.Builder()
-                .url("http://192.168.56.1:4380/login")
+                .url("http://192.168.1.20:4380/login")
                 .post(body)
                 .build();
         OkHttpClient client = new OkHttpClient();
