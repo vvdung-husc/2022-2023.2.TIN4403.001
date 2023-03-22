@@ -14,8 +14,8 @@ CDBLTDD.prototype.Init = function (callback) {
     console.log('Connecting LTDD Database...');
     async.waterfall([
       function (next) {
-        fnConnectDatabase('mongodb://testuser:ltdd%40123@222.255.148.165:9017/LTDD',next);
-        //fnConnectDatabase('mongodb://127.0.0.1:27017/LTDD',next);        
+       // fnConnectDatabase('mongodb://testuser:ltdd%40123@222.255.148.165:9017/LTDD',next);
+        fnConnectDatabase('mongodb://127.0.0.1:27017/LTDD',next);        
       },
       function (next) {
         USERS      = require('../models/user');                
@@ -49,7 +49,7 @@ function fnConnectDatabase(connString,callback) {
     });
     conn.then(function(_db) {
       console.log('...MONGO Actived : [' + _db.name + ']');
-      //console.log(conn);
+      console.log(conn);
       DBLTDD.client = _db;
       callback(null);  
     });
