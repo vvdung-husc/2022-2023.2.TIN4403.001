@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/ic_launcher_foreground"
-        android:label="test-1"
+        android:label="LoginAPP"
         android:supportsRtl="true"
         android:theme="@style/Theme.t1"
         tools:targetApi="31">
