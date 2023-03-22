@@ -21,10 +21,10 @@ app.get("/", function (req, res) {
     var pass = req.body.password;	
     console.log("ACCOUNT:",user, "/",pass );
   
-    if (user == "vvdung" && pass == "13572468" )
-      res.status(200).send("API LOGIN - THANH CONG");
-    else
-      res.status(503).send("API LOGIN - LOI TAI KHOAN");
+   // if (user == "vvdung" && pass == "13572468" )
+    //  res.status(200).send("API LOGIN - THANH CONG");
+    //else
+    // res.status(503).send("API LOGIN - LOI TAI KHOAN");
   });
   
   //hàm đăng ký tài khoản
