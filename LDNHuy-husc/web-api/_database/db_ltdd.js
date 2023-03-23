@@ -9,7 +9,6 @@ var USERS;
 function CDBLTDD() {
     this.client = null;
 }
-
 CDBLTDD.prototype.Init = function (callback) {
     console.log('Connecting LTDD Database...');
     async.waterfall([
@@ -24,7 +23,6 @@ CDBLTDD.prototype.Init = function (callback) {
       }
     ], callback);
   }
-
 function fnConnectDatabase(connString,callback) {
     var mongoose = require('mongoose');
     mongoose.Promise = global.Promise;
