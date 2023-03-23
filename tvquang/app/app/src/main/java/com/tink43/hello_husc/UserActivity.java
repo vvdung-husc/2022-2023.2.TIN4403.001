@@ -26,6 +26,8 @@ public class  UserActivity extends AppCompatActivity {
 
     TextView m_txtWelcome;
     Button m_btnLogout;
+    TextView m_txtUsername;
+   
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +35,22 @@ public class  UserActivity extends AppCompatActivity {
 
         //Khởi tạo các biến điều khiển tương ứng trong layout
         m_txtWelcome = (TextView)findViewById(R.id.txtWelcome);
+        m_txtUsername = (TextView)findViewById(R.id.txtText);
+
         m_btnLogout = (Button) findViewById(R.id.btnLogout);
 
-        //gan ten user vao textview
-
-        String s = "Chào mừng tài khoản : " + MainActivity._userNameLogined;
+        String s = "Chào mừng tài khoản : " + MainActivity._userNameLogined;        
         m_txtWelcome.setText(s);
+       
+
+        try {
+            getUserInfo(MainActivity._userNameLogined);
+        
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         m_btnLogout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -49,9 +61,28 @@ public class  UserActivity extends AppCompatActivity {
             }
         });
     }
-    
-    /*public void getUserInfo(String username){
-        String url = "http://192.168.1.4:4380/userinfo";
+    void doPost(String url,String json) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = RequestBody.create(JSON,json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                call.cancel();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.d("K43",response.body().string());
+            }
+        });
+    }
+    public void getUserInfo(String username){
+        String url = "http://192.168.1.5:4380/userinfo";
         OkHttpClient client = new OkHttpClient();
         RequestBody body = RequestBody.create(JSON, "{\"username\":\"" + username + "\"}");
         Request request = new Request.Builder()
@@ -59,21 +90,22 @@ public class  UserActivity extends AppCompatActivity {
                 .post(body)
                 .build();
                 client.newCall(request).enqueue(new Callback() {
-                    @Override
+
                     public void onFailure(Call call, IOException e) {
                         Log.d("K43","ERROR: " + e.getMessage());
                     }
-        
-                    @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         //show ra thông tin user
-                        Log.d("K43",response.body().string());
-                        Toast.makeText(getApplicationContext(),response.body().string(),Toast.LENGTH_SHORT).show();
-                        finish();
+                        //Log.d("K43",response.body().string());
+                        //lấy từng thông tin của response
+                        String username = response.body().string();
+                        m_txtUsername.setText(username); 
+
                     }
                 });
-            
-    }*/
+                
+
+    }
     
 
 }

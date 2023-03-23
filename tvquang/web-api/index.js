@@ -48,9 +48,11 @@ app.post("/register", function (req, res) {
 app.post("/userinfo", function (req, res) {
   var user = req.body.username;
   var pass = req.body.password;
+  var name = req.body.fullname;
   var oUser = {
     username: user,
     password: pass,
+    fullname: name
   }
   userinfo(oUser,res);
 });
@@ -66,7 +68,7 @@ function userinfo(oUser,res){
       var oResult = {};
       oResult.r = -1;
       oResult.m = result;
-      return res.status(302).json(oResult);
+      return res.status(302).json(oResult);      
     }
     else {
       var oResult = {};

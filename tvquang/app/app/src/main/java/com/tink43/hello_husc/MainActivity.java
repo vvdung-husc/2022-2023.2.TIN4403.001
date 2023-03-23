@@ -24,6 +24,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     static String   _userNameLogined;
+    
     EditText m_edtUser,m_edtPass; //Biến điều khiển EditText
     Button m_btnLogin, m_btnRegister; //Biến điều khiển Button
     @Override
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 apiLogin(user,pass);
                 //gan bien user name
                 _userNameLogined = user;
+
 
             } catch (IOException e) {
                 e.printStackTrace();
