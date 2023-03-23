@@ -15,6 +15,7 @@ public class  UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
         //Khởi tạo các biến điều khiển tương ứng trong layout
         m_txtWelcome = (TextView)findViewById(R.id.txtWelcome);
         m_btnLogout = (Button) findViewById(R.id.btnLogout);
