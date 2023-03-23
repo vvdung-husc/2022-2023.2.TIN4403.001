@@ -1,0 +1,4 @@
+netstat -oamp tcp | findstr _ _ _ _
+ipv4: 192.168.1.89
+
+mongodb://localhost:27017/
