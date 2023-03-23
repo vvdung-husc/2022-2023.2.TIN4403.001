@@ -12,7 +12,10 @@
         android:theme="@style/Theme.DangNhap"
         tools:targetApi="31">
         <activity
-            android:name=".Activity2"
+            android:name=".User"
+            android:exported="false" />
+        <activity
+            android:name=".Dangky"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
