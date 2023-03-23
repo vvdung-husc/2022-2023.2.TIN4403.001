@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {//Hàm sử lý sự kiện click button register
-            //Toast.makeText(getApplicationContext(),"CButtonRegister::onClick...",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(),"::onClick...",Toast.LENGTH_SHORT).show();
             Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(i);
         }

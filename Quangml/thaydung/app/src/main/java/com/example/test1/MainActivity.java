@@ -1,4 +1,4 @@
-package com.example.test_duong;
+package com.example.test1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,18 +12,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-
 public class MainActivity extends AppCompatActivity {
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     static String   _userNameLogined;
     EditText m_edtUser,m_edtPass; //Biến điều khiển EditText
     Button m_btnLogin, m_btnRegister; //Biến điều khiển Button
@@ -66,26 +55,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class CButtonRegister implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {//Hàm sử lý sự kiện click button register
-            //Toast.makeText(getApplicationContext(),"CButtonRegister::onClick...",Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
-            startActivity(i);
-        }
-    }
-
     //Hàm dịch vụ Login
     void apiLogin(String user, String pass) throws IOException {
-        boolean bOk = (user.equals("lmduong") && pass.equals("123456"));
+        boolean bOk = (user.equals("Quangdune") && pass.equals("Quang2001"));
         String json = "{\"username\":\"" + user + "\",\"password\":\"" + pass +"\"}" + bOk;
         Toast.makeText(getApplicationContext(),json,Toast.LENGTH_SHORT).show();
         Log.d("K43",json);
 
         if (bOk){
             Log.d("K43","TRUE OK");
-            _userNameLogined = "Lê Minh Dương";
+            _userNameLogined = " Lương Hũu Quang ";
             Intent intent = new Intent(getApplicationContext(),UserActivity.class);
             startActivity(intent);
         }
@@ -100,4 +79,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public class CButtonRegister implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {//Hàm sử lý sự kiện click button register
+            Toast.makeText(getApplicationContext(),"CButtonRegister::onClick...",Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(i);
+        }
+    }
 }

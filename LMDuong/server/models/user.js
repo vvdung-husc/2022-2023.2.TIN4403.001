@@ -65,11 +65,3 @@ CUser.prototype.registerUser = function (user,callback) {
     }
   ],callback);
 }
-//userinfo
-CUser.prototype.getUserInfo = function (oUser,callback) {
-  async.waterfall([
-    function (next) {
-      User.getByUsername(oUser.username,next);
-    }
-  ],callback);
-}
