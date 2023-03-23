@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             String user = m_edtUser.getText().toString();
             String pass = m_edtPass.getText().toString();
             Log.d("K43","CLICK BUTTON LOGIN ACCOUNT " + user + "/" + pass);
-            if (user.length() <= 3 || pass.length() < 6){
+            if (user.length() < 3 || pass.length() < 6){
                 Toast.makeText(getApplicationContext(),"Tài khoản hoặc mật khẩu không hợp lệ!",Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {//Hàm sử lý sự kiện click button register
-            //Toast.makeText(getApplicationContext(),"CButtonRegister::onClick...",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(),"::onClick...",Toast.LENGTH_SHORT).show();
             Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(i);
         }
