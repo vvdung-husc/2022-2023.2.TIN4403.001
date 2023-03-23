@@ -1,16 +1,17 @@
-package com.example.test1;
+package com.tink43.hello_husc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.io.IOException;
 
 import java.io.IOException;
 
@@ -27,10 +28,14 @@ public class MainActivity extends AppCompatActivity {
     static String   _userNameLogined;
     EditText m_edtUser,m_edtPass; //Biến điều khiển EditText
     Button m_btnLogin, m_btnRegister; //Biến điều khiển Button
+
+    String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        printTokenId();
 
         //Khởi tạo các biến điều khiển tương ứng trong layout
         m_edtUser = (EditText)findViewById(R.id.edtUser);
@@ -45,19 +50,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void printTokenId() {
+        token = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        Log.e("Token", token);
+    }
+    String post(String url, String json) throws IOException {
+        RequestBody body = RequestBody.create(JSON, json); // new
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
+
     public class CButtonLogin  implements View.OnClickListener {
         @Override
         public void onClick(View v) {//Hàm sử lý sự kiện click button login
             String user = m_edtUser.getText().toString();
             String pass = m_edtPass.getText().toString();
             Log.d("K43","CLICK BUTTON LOGIN ACCOUNT " + user + "/" + pass);
-            if (user.length() < 3 || pass.length() < 6){
+            if (user.length() <= 1 || pass.length() < 1){
                 Toast.makeText(getApplicationContext(),"Tài khoản hoặc mật khẩu không hợp lệ!",Toast.LENGTH_SHORT).show();
                 return;
             }
             try {
                 //Gọi hàm dịch vụ Login
-                apiLogin(user,pass);
+                apiLogin(user, pass);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -66,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class CButtonRegister implements View.OnClickListener {
+    public class CButtonRegister implements View.OnClickListener {//Hàm sử lý sự kiện click button register
 
         @Override
         public void onClick(View v) {//Hàm sử lý sự kiện click button register
@@ -123,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     //Hàm dịch vụ Login
-    void apiLogin(String user, String pass) throws IOException {
+    private void apiLogin(String user, String pass) throws IOException {
         //boolean bOk = (user.equals("vvdung") && pass.equals("123456"));
         String json = "{\"username\":\"" + user + "\",\"password\":\"" + pass +"\"}";
         Toast.makeText(getApplicationContext(),json,Toast.LENGTH_SHORT).show();
@@ -131,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(JSON,json);
         Request request = new Request.Builder()
-                .url("http://192.168.56.1:4380/login")
+                .url("http://192.168.1.6:4380/login/")
                 .post(body)
                 .build();
         OkHttpClient client = new OkHttpClient();
@@ -157,26 +177,13 @@ public class MainActivity extends AppCompatActivity {
                     });
                     return;
                 }
-
-                Intent intent = new Intent(getApplicationContext(),UserActivity.class);
+                String s = post("http://192.168.1.6:4380/login", json);
+                Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+                intent.putExtra("token", token);
+                intent.putExtra("key", s);
                 startActivity(intent);
-
             }
         });//client.newCall(request).enqueue(new Callback() {
-
-        /*if (bOk){
-            _userNameLogined = "Võ Việt Dũng";
-            Intent intent = new Intent(getApplicationContext(),UserActivity.class);
-            startActivity(intent);
-        }
-        else{
-            MainActivity.this.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(getApplicationContext(),"Tài khoản hoặc mật khẩu không chính xác.",Toast.LENGTH_SHORT).show();
-                }
-            });
-        }*/
     }
 
 
