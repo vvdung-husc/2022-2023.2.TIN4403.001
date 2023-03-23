@@ -1,5 +1,5 @@
 {
-  "name": "web--api",
+  "name": "web-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.2.4",
     "express": "^4.18.2",
-    "init": "^0.1.2",
     "mongoose": "^5.13.16"
   }
 }
