@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         signupbtn = (MaterialButton) findViewById(R.id.signupbtn);
 
 
-        String us = username.getText().toString();
+//        String US = username.getText().toString();
 
         //Cài đặt sự kiện Click cho Button Login
         loginbtn.setOnClickListener(new CButtonLogin());
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(JSON,json);
         Request request = new Request.Builder()
-                .url("http://192.168.1.20:4380/login")
+                .url("http://192.168.106.11:4380/login")
                 .post(body)
                 .build();
         OkHttpClient client = new OkHttpClient();
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     });
                     return;
                 }
-
+                US = username.getText().toString();
                 Intent intent = new Intent(getApplicationContext(),userActivity.class);
                 startActivity(intent);
 

@@ -1,4 +1,5 @@
 var mongoose    = require('mongoose');
+
 var async       = require('async');
 
 var userSchema = mongoose.Schema({
@@ -11,9 +12,7 @@ userSchema.index({username: 1 });
 
 var User = new CUser();
 module.exports = User;
-
 var _UserModel = null;
-
 function CUser() {
 
 }
