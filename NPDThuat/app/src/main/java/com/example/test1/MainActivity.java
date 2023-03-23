@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Hàm dịch vụ Login
     void apiLogin(String user, String pass) throws IOException {
-        boolean bOk = (user.equals("npdthuat_k43") && pass.equals("1021268"));
+        boolean bOk = (user.equals("thuatnpd_k43") && pass.equals("1021268"));
         String json = "{\"username\":\"" + user + "\",\"password\":\"" + pass +"\"}" + bOk;
         Toast.makeText(getApplicationContext(),json,Toast.LENGTH_SHORT).show();
         Log.d("K43",json);
