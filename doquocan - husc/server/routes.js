@@ -27,7 +27,10 @@ var appRouter = function (app) {
   });
   
   app.post("/register", function (req, res) {
-    res.status(200).send("REGISTER API");
+    var user = req.body.username;
+    var pass = req.body.password;
+    var fullname = req.body.fullname;
+    register(user,pass,fullname,res);
   });
 
 }
@@ -82,6 +85,29 @@ function login(user,pass,res){
       oResult.r = 0;
       oResult.m = oDataRet;
       return res.status(200).json(oResult);
+    }
+  });   
+}
+
+function register(user,pass,fullname,res){
+  var oDataRet = [];
+  async.waterfall([
+    function (next) {
+      USER.checkUser(user,pass,fullname,next);
+    },    
+    function (next) {
+      USER.insertUsers(user,pass,fullname,next);
+      var oResult = {};
+      oResult.r = 0;
+      oResult.m = "Đăng ký thành công";
+      return res.status(201).json(oResult); 
+    },
+  ],function (err, result) {
+    if (err) {
+      var oResult = {};
+      oResult.r = -1;
+      oResult.m = result;
+      return res.status(302).json(oResult);      
     }
   });   
 }
