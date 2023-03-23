@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -58,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             try {
                 //Gọi hàm dịch vụ Login
                 apiLogin(user,pass);
+                //gan bien user name
+                _userNameLogined = user;
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(JSON,json);
         Request request = new Request.Builder()
-                .url("http://192.168.138.194:4380/login")
+                .url("http://192.168.1.5:4380/login")
                 .post(body)
                 .build();
         OkHttpClient client = new OkHttpClient();
@@ -162,7 +163,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });//client.newCall(request).enqueue(new Callback() {
+        });
+        //client.newCall(request).enqueue(new Callback() {
 
         /*if (bOk){
             _userNameLogined = "Võ Việt Dũng";
