@@ -26,7 +26,7 @@ void loop() {
 
 ## 3. Non-Blocking (Chương trình không bị chặn) 
 
-- **Khái niệm**: Một tác vụ được gọi là **non-** khi nó không dừng chương trình lại. Thay vào đó, chương trình tiếp tục thực hiện các tác vụ khác trong khi chờ đợi.
+- **Khái niệm**: Một tác vụ được gọi là **non-blocking** khi nó không dừng chương trình lại. Thay vào đó, chương trình tiếp tục thực hiện các tác vụ khác trong khi chờ đợi.
 - **Ví dụ**: Sử dụng `millis()` để kiểm tra thời gian thay vì dùng `delay()`. Chương trình sẽ tiếp tục chạy và chỉ thực hiện tác vụ khi điều kiện thời gian được đáp ứng.
 - **Ưu điểm**: Tận dụng tối đa thời gian và tài nguyên, phù hợp với các ứng dụng đa nhiệm hoặc cần phản hồi nhanh.
 - **Nhược điểm**: Code phức tạp hơn so với blocking.
